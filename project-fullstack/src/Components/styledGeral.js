@@ -64,5 +64,16 @@ img{
   
 }
 
-` 
+`
+
+export const FormInputs = styled.form`
+display: flex;
+flex-direction: column;
+height: 20vh;
+width: 335px;
+justify-content: space-around;
+margin-top: 20%;
+margin-left: 3%;
+margin-bottom: 5%;
+`;
 

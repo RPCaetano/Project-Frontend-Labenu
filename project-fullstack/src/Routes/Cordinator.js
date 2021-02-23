@@ -1,12 +1,12 @@
-export const goToLoginPage =(history)=>{
-    history.push('/LoginPage')
+export const goToLogin =(history)=>{
+    history.push('/Login')
 }
-export const goToRegisterPage =(history)=>{
-    history.push('/RegisterPage')
+export const goToRegister =(history)=>{
+    history.push('/Register')
 }
-export const goToHomePage =(history)=>{
+export const goToHome =(history)=>{
     history.push('/')
 }
-export const goToExplorerPage =(history)=>{
-    history.push('/ExplorerPage')
+export const goToExplorer =(history)=>{
+    history.push('/Explorer')
 }

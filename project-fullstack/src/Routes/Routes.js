@@ -1,24 +1,26 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from '../Screens/Login';
+import Home from '../Screens/Home';
+import Register from '../Screens/Register'
+import Explorer from '../Screens/Explorer'
 
-
-
-function Router() {
+function Routes() {
     return (
   <BrowserRouter>
   <Switch>
       
   <Route exact path='/'>
-      <HomePage/>
+      <Home/>
   </Route>
-  <Route exact path='/LoginPage'>
-      <LoginPage/>
+  <Route exact path='/Login'>
+      <Login/>
   </Route>
   <Route exact path='/Register'>
       <Register/>
   </Route>
   <Route exact path='/Explorer'>
-      <ExplorerPage/>
+      <Explorer/>
   </Route>
    <Route>
       <div>Erro:404</div>
@@ -29,4 +31,4 @@ function Router() {
     )
   }
   
-  export default Router;
+  export default Routes;
