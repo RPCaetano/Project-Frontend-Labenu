@@ -83,7 +83,6 @@ margin-bottom: 5%;
 export const H1 = styled.h1`
 text-align:center;
 color:#26418f;
-padding:80px ;
 margin-left:20%;
 `
 
@@ -94,7 +93,20 @@ text-align:justify;
 margin-left:25%;
 margin-right:3%;
 margin-top:5%;
+`
 
+export const Image= styled.div`
+display:flex;
+flex-wrap:wrap;
+flex-direction: row;
+margin-left:30%;
+p{
+  padding:10px;
+}
+img{
+  width:150px;
+  height:100px;
+}
 `
 
 
