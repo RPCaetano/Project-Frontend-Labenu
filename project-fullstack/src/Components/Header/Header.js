@@ -9,10 +9,7 @@ export default function Header(){
    
      
         <S.HeaderContainer>
-               <S.LogoImg>
-        <img src ={logo} alt ='logo'></img>
         
-         </S.LogoImg>
          
             <Menu/>
         

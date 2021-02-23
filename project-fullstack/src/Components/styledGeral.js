@@ -1,12 +1,14 @@
 import styled from 'styled-components'
+
+
+
 //IMG LOGO
 
 export const LogoImg = styled.div`
-margin-left:60px;
+margin-left:3px;
 img{
-  width:96px;
-  
-}
+  width:250px;
+  }
 `
 
 // HEADER
@@ -14,33 +16,37 @@ img{
 export const HeaderContainer = styled.header`
 height:100px;
 width:100vw;
-background-color:#f44336;
-
+background-color:#26418f;
 `
 
 //MENU 
-
 export const NavContainer = styled.nav`
 ul{
+  padding:5px 10px;
+        width:100%;
     li{
-        padding:20px 0;
+      
+        padding:10px 0px;
         width:100%;
         display:block;
-        border-bottom:1px solid #ffcdd2;
-        color:#ef5350;
+        border-bottom:1px solid #f8fdff;
+        color:#f8fdff;
+        cursor: pointer;
         &:last-child{
             border:none;
         }
+        & :hover{
+          background-color:#aab6fe;
+        }
          }
-        
-}`
+        }`
 
 
 
 export const MenuContainer =styled.div`
 height:100vh;
 width:250px;
-background:#ffebee;
+background:#26418f;
 padding:20px;
 
 `
@@ -61,9 +67,7 @@ p{
 }
 img{
   width:20px;
-  
-}
-
+  }
 `
 
 export const FormInputs = styled.form`
@@ -72,8 +76,25 @@ flex-direction: column;
 height: 20vh;
 width: 335px;
 justify-content: space-around;
-margin-top: 20%;
-margin-left: 3%;
+margin-top: 15%;
+margin-left: 48%;
 margin-bottom: 5%;
 `;
+export const H1 = styled.h1`
+text-align:center;
+color:#26418f;
+padding:80px ;
+margin-left:20%;
+`
+
+export const TextAbout= styled.div`
+display:flex;
+flex-direction: column;
+text-align:justify;
+margin-left:25%;
+margin-right:3%;
+margin-top:5%;
+
+`
+
 

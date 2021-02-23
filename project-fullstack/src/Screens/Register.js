@@ -1,9 +1,10 @@
 import React from 'react'
-import { TextField, Button } from '@material-ui/core'
+import { TextField, Button, Menu } from '@material-ui/core'
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import * as S from '../Components/styledGeral'
 import { useForm } from '../Hooks/useForm'
+import Header from '../Components/Header/Header';
 
 export default function Register() {
     const [showPassword, setShowPassword] = React.useState(false)
@@ -14,9 +15,7 @@ export default function Register() {
       email: "",
       password: ""
     })
-     
-   
-  
+       
     const handleInputChange = (event) => {
       const {value, name} = event.target
   
@@ -25,11 +24,9 @@ export default function Register() {
   
     const handleSubmit = (event) => {
       event.preventDefault()
-      
-   
+         
     }
-  
-    
+      
     const handleShowPassword = () => {
       if (showPassword) {
         setShowPassword(false)
@@ -38,8 +35,11 @@ export default function Register() {
         }
       }
     return (
-        <div>
+      <>
+      <Header/>
+    
         <S.FormInputs onSubmit={handleSubmit}>
+          <h1>Cadastre-se</h1>
             <TextField 
             value={form.name} 
             onChange={handleInputChange}
@@ -77,7 +77,6 @@ export default function Register() {
             required
             size="small"
           />
-          <br />
           <br/>
           <TextField 
             value={form.password}
@@ -135,12 +134,12 @@ export default function Register() {
           <br/>
           <Button
             variant='contained'
-            color="primary"
             type="submit"
+            color="primary"
           >
             CRIAR
           </Button>
         </S.FormInputs>
-      </div>
+     </>
     );
   }
