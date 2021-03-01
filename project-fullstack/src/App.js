@@ -1,15 +1,13 @@
 
 import './App.css';
-import Header from './Components/Header/Header';
+import Routes from '../src/Routes/Routes'
 import GlobalStyle from './Components/Menu/Global'
 
 function App() {
   return (
-    //<Router/>
-    <div>
-    <Header/>
-    <GlobalStyle/>
-    </div>
+    
+    <Routes/>
+     
   );
 }
 
