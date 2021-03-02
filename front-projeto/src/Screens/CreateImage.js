@@ -9,7 +9,7 @@ import { createImage } from '../Services/User';
 import { useForm } from '../Hooks/useForm';
 
 
-export default function PrivatePage() {
+export default function CreateImage() {
   const history=useHistory();
   
   const {form, onChange} = useForm({subtitle:"",author: "",tags: "",file: "",collection: ""})

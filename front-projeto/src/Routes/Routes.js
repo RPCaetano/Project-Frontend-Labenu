@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from '../Screens/Home';
 import Register from '../Screens/Register'
 import Explorer from '../Screens/Explorer'
-import PrivatePage from '../Screens/PrivatePage'
+import PrivatePage from '../Screens/CreateImage'
 import LoginPage from '../Screens/LoginPage';
 import CollectionDetail from '../Screens/CollectionDetail'
 
