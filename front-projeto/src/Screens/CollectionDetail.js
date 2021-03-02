@@ -8,7 +8,7 @@ import { goToCollectionDetail, goToExplorer, goToPrivatePage} from '../Routes/Co
 import * as S from '../Styles/Explorer'
 
 
-export default function Explorer() {
+export default function CollectionDetail() {
     const history = useHistory();
     const [image, setImage] = useState([]);
     
@@ -19,7 +19,7 @@ export default function Explorer() {
     const getAllImage =() => {
      
       axios
-        .get(`${BaseUrl}/image`,{
+        .get(`${BaseUrl}/image/`,{
           headers: {
             Authorization: localStorage.getItem("token")
           },
@@ -27,7 +27,7 @@ export default function Explorer() {
         .then((response) => {
           setImage(response.data.images)
           console.log(response.data.images)
-          //goToExplorer(history);
+         
         })
         .catch((er) => {
           console.log(er.response && er.response.data || er.message);
@@ -41,33 +41,44 @@ export default function Explorer() {
        <h1>SEJA BEM VINDA : </h1>
        <Profile/>
        <button onClick={() => goToPrivatePage(history)} >  Cadastrar imagem </button>
-           <S.BoxContainerCollection>
+     
+      <S.ContainerCollection>
      
       {image &&
         image.map((item) => {
+         
           return (
-            
-            //  <p key={item.id.images}>{item.idimages}</p>,
-            // <p></p>,
-          //  <p>{item.author}</p>,
-          //   <p>{item.date}</p>,
-          //    <p>{item.tags}</p>,
-          //   <p>{item.file}</p>,
-         <p onClick={() => goToCollectionDetail(history)} > {item.collection}<hr></hr>
+            <S.BoxContainerCollection>
+              <p>Coleção: {item.collection}<hr></hr>
+              </p>
+              <p>Autor: {item.author}
+              </p>
+              <p>Id_Image: {item.id}
+              </p>
+              <p>Subtitulo: {item.subtitle}
+              </p>
+              <p>Data: {item.date}
+              </p>
+              <p>Tags: {item.tags}
+              </p>
+              <p>Arquivo:{item.file}<hr></hr>
            </p>
+          
+           </S.BoxContainerCollection>
+       
           );
         
         })}
    
         
            
-        </S.BoxContainerCollection>
-        
+   </S.ContainerCollection>   
       
       
+   </div>
   
-          </div>
+          
         
-    
+          
   );
 }
