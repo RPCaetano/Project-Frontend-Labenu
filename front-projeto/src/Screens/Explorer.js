@@ -47,12 +47,7 @@ export default function Explorer() {
         image.map((item) => {
           return (
             
-            //  <p key={item.id.images}>{item.idimages}</p>,
-            // <p></p>,
-          //  <p>{item.author}</p>,
-          //   <p>{item.date}</p>,
-          //    <p>{item.tags}</p>,
-          //   <p>{item.file}</p>,
+            
          <p onClick={() => goToCollectionDetail(history)} > {item.collection}<hr></hr>
            </p>
           );
