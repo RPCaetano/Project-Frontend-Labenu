@@ -5,8 +5,17 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import * as S from '../Styles/Inputs'
 import { useForm } from '../Hooks/useForm'
 import Header from '../Components/Header/Header';
+import { goToHome } from '../Routes/Cordinator';
+import {useHistory}from 'react-router-dom';
+import {register}from '../Services/User'
+import { useUnprotectPage } from '../Hooks/useUnprotectPage';
+
 
 export default function Register() {
+
+  useUnprotectPage()
+  const history=useHistory();
+
     const [showPassword, setShowPassword] = React.useState(false)
   
     const {form, onChange} = useForm({
@@ -24,7 +33,7 @@ export default function Register() {
   
     const handleSubmit = (event) => {
       event.preventDefault()
-         
+      register(form,history)
     }
       
     const handleShowPassword = () => {
@@ -34,6 +43,8 @@ export default function Register() {
         setShowPassword(true)
         }
       }
+
+    
     return (
       <>
       <Header/>
@@ -136,9 +147,10 @@ export default function Register() {
             required
           />
           <br/>
-          <S.ButtonRegister>      
+          <S.ButtonRegister type='submit'>      
                      CRIAR
           </S.ButtonRegister>
+          <S.ButtonBack onClick={()=>goToHome(history)}>Voltar</S.ButtonBack>
         </S.FormInputs>
      </>
     );

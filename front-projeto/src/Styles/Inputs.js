@@ -34,3 +34,7 @@ export const ButtonRegister = styled.button`
 color:var(--text);
 border-radius:5px;
 `
+export const ButtonBack = styled.button`
+color:var(--text);
+border-radius:5px;
+`

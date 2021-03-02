@@ -11,3 +11,6 @@ export const goToRegister =(history)=>{
 export const goToExplorer =(history)=>{
     history.push('/Explorer')
 }
+export const goToPrivatePage =(history)=>{
+    history.push('/PrivatePage')
+}
