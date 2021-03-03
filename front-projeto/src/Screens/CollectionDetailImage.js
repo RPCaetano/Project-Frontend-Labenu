@@ -8,17 +8,17 @@ import * as S from '../Styles/Explorer'
 
 
 
-export default function CollectionDetail() {
+export default function CollectionDetailImage() {
     const history = useHistory();
-      const [detail,setDetail] = useState({})
+      const [detailImg,setDetailImg] = useState({})
       const pathParams = useParams();
       const id = pathParams.id;
   
       useEffect( ()=> {
-        getViewDetail()
+        getViewDetailImage()
       },[])
   
-  const getViewDetail =()=>{
+  const getViewDetailImage =()=>{
 
         axios
         .get(`${BaseUrl}/image/${id}`,{
@@ -27,7 +27,7 @@ export default function CollectionDetail() {
           },
         })
         .then((response) => {
-           setDetail(response.data.image)
+           setDetailImg(response.data.image)
          
         })
         .catch((er) => {
@@ -48,16 +48,8 @@ export default function CollectionDetail() {
       <S.BoxContainerCollectionDetail>
       <p>DETALHES DA IMAGEM </p>
       <hr></hr> 
-              <p><strong>Coleção:</strong> {detail.collection}</p>
-              <p><strong>Autor:</strong>  {detail.author}    </p>
-              <p><strong>Id_Image:</strong>  {detail.id}
-              </p>
-              <p><strong>Subtitulo:</strong>  {detail.subtitle}
-              </p>
-              <p><strong>Data:</strong> {detail.date}
-              </p>
-              <p><strong>Tags:</strong>  {detail.tags}
-              </p>
+              <img src = {detailImg.file}/>
+     
               </S.BoxContainerCollectionDetail>
         </S.ContainerCollection> 
         </div>

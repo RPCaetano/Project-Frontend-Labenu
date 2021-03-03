@@ -8,18 +8,23 @@ export default function Menu(){
   const history = useHistory();
   return(
      <S.MenuContainer>
-      
+        
          <S.NavContainer>
+      
               <ul>
                 <li>
             <a onClick={() => goToHome(history)}>Sobre</a>
             <a onClick={() => goToPrivatePage(history)}>Explorar</a>
             <a onClick={() => goToRegister(history)}>Cadastrar</a>
             <a onClick={() => goToLoginPage(history)}>Login</a>
+           
                </li>
+            
              </ul>
+             <hr></hr>
         {/* <Footer/> */}
       </S.NavContainer>
+      
     </S.MenuContainer>
       )
 }

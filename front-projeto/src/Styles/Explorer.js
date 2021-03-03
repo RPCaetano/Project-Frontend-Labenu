@@ -16,13 +16,15 @@ export const BoxContainerCollectionDetail = styled.div`
     text-align: center;
     max-width:100%;
     img{
-           max-width:500px;
+           max-width:300px;
+         
           
        }
      p{
        text-align:justify;
        strong{
        color:black
+
        }}`
     
     export const ContainerCollection = styled.div`
@@ -130,3 +132,14 @@ const useStyles = makeStyles((theme) => ({
      background-color:var(--yellow);
    }
   `
+
+export const ButtonBack=styled.button`
+width:141px;
+border: 0.5px solid grey ;
+border-radius:5px;
+margin-left:20px;
+padding:5px;
+:hover{
+background-color:var(--yellow);
+}
+`
