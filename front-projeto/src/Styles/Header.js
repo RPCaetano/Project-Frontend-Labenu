@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { makeStyles } from '@material-ui/core/styles';
 
 export const HeaderContainer = styled.header`
 display:flex;
@@ -56,12 +55,6 @@ display:flex;
 background:var(--background);
 padding:10px;
 `
-export const Search =styled.div`
-display:flex;
-flex-direction:row;
-justify-content:space-between;
-align-items:center;
-margin:20px ;
 
 
 /* input{
@@ -80,23 +73,4 @@ margin-top:2px;
 margin-left:430px;
 position: absolute;
 } */
-`
 
- const useStyles = makeStyles((theme) => ({
-    root: {
-      
-      display: 'flex',
-      alignItems: 'center',
-      width: 300,
-    },
-    input: {
-      marginLeft: theme.spacing(1),
-      flex: 1,
-   
-    },
-    iconButton: {
-      padding: 5,
-    },
-  
-  
-  })); export default useStyles;
