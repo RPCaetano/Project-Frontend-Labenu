@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BaseUrl } from '../Constants/BaseUrl';
-import { goToCollection, goToExplorer, goToLoginPage, goToPrivatePage } from "../Routes/Cordinator";
+import { goToAllCollection, goToCollection, goToExplorer, goToLoginPage, goToPrivatePage } from "../Routes/Cordinator";
 import {Explorer} from '../Screens/AllCollection'
 
 export const register = (body, history) => {
@@ -8,7 +8,7 @@ export const register = (body, history) => {
   .post(`${BaseUrl}/users/signup`, body)
   .then((res) => {
     localStorage.setItem("token", res.data.token);
-    goToPrivatePage(history);
+    goToAllCollection(history);
   })
   .catch((er) => {
     alert("Username ja cadastrado(");
@@ -22,7 +22,7 @@ export const login = (body, history) => {
       .post(`${BaseUrl}/users/login`, body)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        goToPrivatePage(history);
+        goToAllCollection(history);
       })
       .catch((err) => {
         alert("Email ou senha inválidos :(");
@@ -40,10 +40,12 @@ export const login = (body, history) => {
         })
         .then(() => {
           alert("Imagem criada com sucesso");
-          goToCollection(history);
+          goToAllCollection(history);
         })
         .catch((er) => {
           console.log(er.response && er.response.data || er.message);
         });
     };
+
+   
 

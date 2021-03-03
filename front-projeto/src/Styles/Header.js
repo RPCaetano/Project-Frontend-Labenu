@@ -48,6 +48,7 @@ ul{
              padding:10px;
              margin-left:200px;
          }
+        
         }`
 
 export const MenuContainer =styled.div`
