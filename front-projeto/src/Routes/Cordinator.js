@@ -23,7 +23,3 @@ export const goToCollectionDetail =(history)=>{
 export const goToPrivatePage =(history)=>{
     history.push('/PrivatePage')
 }
-
-export const goToCollectionDetailImage =(history)=>{
-    history.push('/CollectionDetailImage')
-}

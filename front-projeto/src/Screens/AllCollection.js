@@ -56,7 +56,7 @@ export default function AllCollection() {
       <div>
        <Header/> 
        <S.ButtonGoCreate onClick={() => goToCreateImage(history)} >  Cadastrar imagem </S.ButtonGoCreate>
-        <S.ButtonGoAllCollection onClick={() => goToAllCollection(history)} > Ver Todas </S.ButtonGoAllCollection>
+        {/* <S.ButtonGoAllCollection onClick={() => goToAllCollection(history)} > Ver Todas </S.ButtonGoAllCollection> */}
      
       <S.ContainerCollection>
      
@@ -67,7 +67,8 @@ export default function AllCollection() {
             <S.BoxContainerCollectionDetail>
            
               <img src={item.file}/> 
-              <p>        <button onClick={()=> getDetail(item.id)}>TESTE DETALHES</button></p>
+              
+              <S.ButtonDetail onClick={()=> getDetail(item.id)}>Ver Detalhes</S.ButtonDetail>
            </S.BoxContainerCollectionDetail>
        
            );

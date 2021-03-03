@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const BoxContainerCollectionDetail = styled.div`
 
-    //width:350px;
-    height: 100%;
+    width:350px;
+    height: 100;
     border-radius: 5px;
     box-shadow: 0 0 20px black;
     padding:1.5rem 3rem;
@@ -17,15 +17,13 @@ export const BoxContainerCollectionDetail = styled.div`
     max-width:100%;
     img{
            max-width:300px;
-         
-          
+                
        }
      p{
        text-align:justify;
        strong{
        color:black
-
-       }}`
+       }   }`
     
     export const ContainerCollection = styled.div`
 
@@ -34,29 +32,6 @@ export const BoxContainerCollectionDetail = styled.div`
     margin:20px;
      
    `
-
-// export const BoxContainerExplorer = styled.div`
-
-// width:350px;
-// height: 100%;
-// border-radius: 5px;
-// box-shadow: 0 0 20px black;
-// padding:1.5rem 3rem;
-// margin: 5px;
-// margin-left:35%;
-
-// display: flex;
-// flex-direction: column;
-// justify-content:center ;
-// text-align: center;
-// max-width:100%;
-// text-decoration:none;
-// cursor: pointer;
-// & hover{
-//      background-color:red;
-// }
-
-
 export const BoxContainerCollection = styled.div`
 width:200px;
 height: 100%;
@@ -140,6 +115,18 @@ border-radius:5px;
 margin-left:20px;
 padding:5px;
 :hover{
+background-color:var(--yellow);
+}
+`
+
+export const ButtonDetail=styled.span`
+
+align-items:center;
+margin:10px;
+padding:5px;
+cursor:pointer;
+:hover{
+border-radius:10px;
 background-color:var(--yellow);
 }
 `

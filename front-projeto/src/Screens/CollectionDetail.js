@@ -40,8 +40,8 @@ export default function CollectionDetail() {
         <Header/> 
     
         <S.ButtonGoCreate onClick={() => goToCreateImage(history)} >  Cadastrar imagem </S.ButtonGoCreate>
-        <S.ButtonGoAllCollection onClick={() => goToAllCollection(history)} > Ver Todas </S.ButtonGoAllCollection>
-        <S.ButtonBack onClick={() => goToPrivatePage(history)} > Voltar </S.ButtonBack>
+        {/* <S.ButtonGoAllCollection onClick={() => goToAllCollection(history)} > Ver Todas </S.ButtonGoAllCollection> */}
+        <S.ButtonBack onClick={() => goToAllCollection(history)} > Voltar </S.ButtonBack>
 
         <S.ContainerCollection> 
      

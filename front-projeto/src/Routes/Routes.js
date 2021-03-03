@@ -9,7 +9,6 @@ import CreateImage from '../Screens/CreateImage';
 import Collection from '../Screens/AllCollection'
 import PrivatePage from '../Screens/PrivatePage'
 import AllCollection from '../Screens/AllCollection'
-import CollectionDetailImage from '../Screens/CollectionDetailImage'
 
 function Routes() {
     return (
@@ -39,9 +38,6 @@ function Routes() {
   <CollectionDetail/>
 </Route>
   
-<Route exact path ='/image/:id'>
-  <CollectionDetailImage/>
-</Route>
 <Route exact path ='/AllCollection'>
   <AllCollection/>
 </Route>
