@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useHistory } from 'react-router-dom';
-import { goToLoginPage, goToFeedPage } from '../Routes/Cordinator';
+import { goToRegister } from '../Routes/Cordinator';
 
 
 export const useUnprotectPage = () => {
@@ -10,7 +10,7 @@ export const useUnprotectPage = () => {
         const token = window.localStorage.getItem("token")
 
         if (token) {
-            goToLoginPage(history)
+            goToRegister(history)
         }
     }, [history])
 

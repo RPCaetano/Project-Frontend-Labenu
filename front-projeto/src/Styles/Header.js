@@ -55,14 +55,9 @@ display:flex;
 background:var(--background);
 padding:10px;
 `
-export const Search =styled.div`
-display:flex;
-flex-direction:row;
-justify-content:space-between;
-align-items:center;
-margin:20px;
 
-input{
+
+/* input{
 border: 1px solid gray ;
 border-radius: 5px;
 height:25px;
@@ -77,5 +72,5 @@ width:15px;
 margin-top:2px;
 margin-left:430px;
 position: absolute;
-}
-`
+} */
+

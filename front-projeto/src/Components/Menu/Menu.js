@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from '../../Styles/Header'
 import Footer from '../Footer/Footer'
-import { goToExplorer, goToLogin, goToRegister,goToHome } from '../../Routes/Cordinator'
+import { goToExplorer, goToRegister,goToHome, goToLoginPage, goToPrivatePage } from '../../Routes/Cordinator'
 import { useHistory } from "react-router-dom";
 
 export default function Menu(){
@@ -13,12 +13,12 @@ export default function Menu(){
               <ul>
                 <li>
             <a onClick={() => goToHome(history)}>Sobre</a>
-            <a onClick={() => goToExplorer(history)}>Explorar</a>
+            <a onClick={() => goToPrivatePage(history)}>Explorar</a>
             <a onClick={() => goToRegister(history)}>Cadastrar</a>
-            <a onClick={() => goToLogin(history)}>Login</a>
+            <a onClick={() => goToLoginPage(history)}>Login</a>
                </li>
              </ul>
-        <Footer/>
+        {/* <Footer/> */}
       </S.NavContainer>
     </S.MenuContainer>
       )

@@ -7,9 +7,12 @@ import { useHistory } from "react-router-dom";
 import * as S from '../Styles/Inputs';
 import { goToRegister } from '../Routes/Cordinator';
 import Header from '../Components/Header/Header';
+import { useUnprotectPage } from '../Hooks/useUnprotectPage';
+import { login } from '../Services/User';
 
 
-export default function Login() {
+export default function LoginPage() {
+    // useUnprotectPage()
     const history = useHistory();
    
   const [showPassword, setShowPassword] = React.useState(false)
@@ -26,7 +29,8 @@ export default function Login() {
   }
  
   const handleSubmit = (event) => {
-    console.log('chamou a função')
+    event.preventDefault();
+        login(form,history)
     
    }
 
@@ -85,6 +89,7 @@ export default function Login() {
             }}
           />
           <br></br>
+          
           <S.ButtonLogin > LOGIN</S.ButtonLogin>
            
       
