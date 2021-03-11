@@ -5,11 +5,13 @@ import Header from '../Components/Header/Header';
 import { BaseUrl } from '../Constants/BaseUrl';
 import { goToAllCollection, goToCreateImage, goToPrivatePage } from '../Routes/Cordinator';
 import * as S from '../Styles/Explorer'
-
+import useProtectPage from '../Hooks/useProtectPage'
 
 
 export default function CollectionDetail() {
-    const history = useHistory();
+  useProtectPage()  
+  
+  const history = useHistory();
       const [detail,setDetail] = useState({})
       const pathParams = useParams();
       const id = pathParams.id;
@@ -37,7 +39,7 @@ export default function CollectionDetail() {
 
       return(
         <div>
-        <Header/> 
+       
     
         <S.ButtonGoCreate onClick={() => goToCreateImage(history)} >  Cadastrar imagem </S.ButtonGoCreate>
         {/* <S.ButtonGoAllCollection onClick={() => goToAllCollection(history)} > Ver Todas </S.ButtonGoAllCollection> */}

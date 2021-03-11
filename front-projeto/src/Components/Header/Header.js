@@ -19,10 +19,6 @@ export default function Header(){
      
        </S.HeaderContainer>
   
-            
-        <S.NavContainer>
-           <Menu/>
-        </S.NavContainer>
        </>
         )
 }

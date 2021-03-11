@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useHistory } from 'react-router-dom';
-import { goToRegister } from '../Routes/Cordinator';
+import { goToAllCollection} from '../Routes/Cordinator';
 
 
 export const useUnprotectPage = () => {
@@ -10,7 +10,7 @@ export const useUnprotectPage = () => {
         const token = window.localStorage.getItem("token")
 
         if (token) {
-            goToRegister(history)
+            goToAllCollection(history)
         }
     }, [history])
 

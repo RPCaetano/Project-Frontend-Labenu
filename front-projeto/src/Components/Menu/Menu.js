@@ -1,11 +1,24 @@
 import React from 'react'
 import * as S from '../../Styles/Header'
-import Footer from '../Footer/Footer'
-import { goToExplorer, goToRegister,goToHome, goToLoginPage, goToPrivatePage, goToAllCollection } from '../../Routes/Cordinator'
+import {  goToRegister,goToHome, goToLoginPage, goToAllCollection } from '../../Routes/Cordinator'
 import { useHistory } from "react-router-dom";
 
-export default function Menu(){
+ const Menu = ({rightButtonText,setRightButtonText}) => {
+  const token = localStorage.getItem("token")
   const history = useHistory();
+ 
+  const logout=()=>{
+   localStorage.removeItem("token")
+  }
+    const rightButtonAction =()=>{
+   if(token){
+     logout()
+     setRightButtonText("Login")
+     goToLoginPage(history)
+   }else
+   goToLoginPage(history)
+ }
+ 
   return(
      <S.MenuContainer>
         
@@ -16,7 +29,7 @@ export default function Menu(){
             <a onClick={() => goToHome(history)}>Sobre</a>
             <a onClick={() => goToAllCollection(history)}>Explorar</a>
             <a onClick={() => goToRegister(history)}>Cadastrar</a>
-            <a onClick={() => goToLoginPage(history)}>Login</a>
+            <a onClick={rightButtonAction}>{rightButtonText}</a>
            
                </li>
             
@@ -28,3 +41,4 @@ export default function Menu(){
     </S.MenuContainer>
       )
 }
+export default Menu

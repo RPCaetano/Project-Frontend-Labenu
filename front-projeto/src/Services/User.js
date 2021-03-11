@@ -1,14 +1,15 @@
 import axios from "axios";
 import { BaseUrl } from '../Constants/BaseUrl';
-import { goToAllCollection, goToCollection, goToExplorer, goToLoginPage, goToPrivatePage } from "../Routes/Cordinator";
-import {Explorer} from '../Screens/AllCollection'
+import { goToAllCollection} from "../Routes/Cordinator";
 
-export const register = (body, history) => {
+export const register = (body, history,setRightButtonText) => {
   axios
   .post(`${BaseUrl}/users/signup`, body)
   .then((res) => {
     localStorage.setItem("token", res.data.token);
+    
     goToAllCollection(history);
+    setRightButtonText("Logout")
   })
   .catch((er) => {
     alert("Username ja cadastrado(");
@@ -17,12 +18,14 @@ export const register = (body, history) => {
 };
 
 
-export const login = (body, history) => {
+export const login = (body, history,setRightButtonText) => {
     axios
       .post(`${BaseUrl}/users/login`, body)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
+      
         goToAllCollection(history);
+        setRightButtonText("Logout")
       })
       .catch((err) => {
         alert("Email ou senha inválidos :(");
@@ -30,22 +33,6 @@ export const login = (body, history) => {
       });
   };
   
-      export const createImage = (body, history) => {
-      const token = localStorage.getItem("token");
-      axios
-        .post(`${BaseUrl}/image/registry`, body, {
-          headers: {
-            Authorization: token,
-          },
-        })
-        .then(() => {
-          alert("Imagem criada com sucesso");
-          goToAllCollection(history);
-        })
-        .catch((er) => {
-          console.log(er.response && er.response.data || er.message);
-        });
-    };
-
+     
    
 

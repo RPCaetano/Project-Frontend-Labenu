@@ -1,17 +1,17 @@
 import React from 'react';
 import {useHistory}from 'react-router-dom';
 import Header from '../Components/Header/Header';
-import { useProtectPage } from '../Hooks/useProtectPage';
-import { goToHome } from '../Routes/Cordinator';
 import * as S from '../Styles/Inputs';
 import { TextField } from '@material-ui/core'
-import { createImage } from '../Services/User';
 import { useForm } from '../Hooks/useForm';
+import useProtectPage from '../Hooks/useProtectPage'
+import { createImage } from '../Services/Image';
 
 
 export default function CreateImage() {
+ useProtectPage();
   const history=useHistory();
-  
+
   const {form, onChange} = useForm({subtitle:"",author: "",tags: "",file: "",collection: ""})
 
     const handleInputChange = (event) => {
@@ -26,7 +26,7 @@ export default function CreateImage() {
     }
   return (
     <>
-     <Header/>
+    
      <div>
        Dados Usuario
      </div>
