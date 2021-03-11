@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
 import Header from '../Components/Header/Header';
 import { BaseUrl } from '../Constants/BaseUrl';
-import { goToAllCollection, goToCreateImage } from '../Routes/Cordinator';
+import { goToCreateImage } from '../Routes/Cordinator';
 import * as S from '../Styles/Explorer'
 
 
 export default function AllCollection() {
-    const history = useHistory();
-    const [image, setImage] = useState([]);
+   const history = useHistory();
+   const [image, setImage] = useState([]);
     
 
     useEffect(() => {
@@ -54,7 +54,7 @@ export default function AllCollection() {
     };
     return (
       <div>
-       <Header/> 
+      
        <S.ButtonGoCreate onClick={() => goToCreateImage(history)} >  Cadastrar imagem </S.ButtonGoCreate>
         {/* <S.ButtonGoAllCollection onClick={() => goToAllCollection(history)} > Ver Todas </S.ButtonGoAllCollection> */}
      

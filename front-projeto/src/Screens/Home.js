@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
  <>
-<Header/> 
+
 
 <S.TextAbout>
 <h1>Nossa história</h1>

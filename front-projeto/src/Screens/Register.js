@@ -4,15 +4,13 @@ import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import * as S from '../Styles/Inputs'
 import { useForm } from '../Hooks/useForm'
-import Header from '../Components/Header/Header';
 import { goToHome } from '../Routes/Cordinator';
 import {useHistory}from 'react-router-dom';
 import {register}from '../Services/User'
 import { useUnprotectPage } from '../Hooks/useUnprotectPage';
 
 
-export default function Register() {
-
+export default function Register({setRightButtonText}) {
   useUnprotectPage()
   const history=useHistory();
 
@@ -33,7 +31,7 @@ export default function Register() {
   
     const handleSubmit = (event) => {
       event.preventDefault()
-      register(form,history)
+      register(form,history,setRightButtonText)
     }
       
     const handleShowPassword = () => {
@@ -47,9 +45,8 @@ export default function Register() {
     
     return (
       <>
-      <Header/>
-    
-        <S.FormInputs onSubmit={handleSubmit}>
+         
+        <S.FormInputs onSubmit={handleSubmit} setRightButtonText={setRightButtonText}>
           <h1>Cadastre-se</h1>
             <TextField 
             color= 'primary'

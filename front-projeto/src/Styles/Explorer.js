@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
    }
    `
   export const ButtonGoAllCollection=styled.button`
-      width:141px;
+   width:141px;
    border: 0.5px solid grey ;
    border-radius:5px;
    margin-left:20px;

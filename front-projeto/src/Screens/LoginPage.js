@@ -11,8 +11,8 @@ import { useUnprotectPage } from '../Hooks/useUnprotectPage';
 import { login } from '../Services/User';
 
 
-export default function LoginPage() {
-    // useUnprotectPage()
+const LoginPage = ({setRightButtonText}) => {
+     useUnprotectPage();
     const history = useHistory();
    
   const [showPassword, setShowPassword] = React.useState(false)
@@ -30,7 +30,7 @@ export default function LoginPage() {
  
   const handleSubmit = (event) => {
     event.preventDefault();
-        login(form,history)
+        login(form,history,setRightButtonText)
     
    }
 
@@ -44,9 +44,9 @@ export default function LoginPage() {
    
     return (
       <>
-       <Header/>
+     
       
-        <S.FormInputs onSubmit={handleSubmit}>
+        <S.FormInputs onSubmit={handleSubmit} setRightButtonText={setRightButtonText}>
              <h1>Faça seu login</h1>
           <TextField
           
@@ -102,3 +102,4 @@ export default function LoginPage() {
             </>
   );
 }
+export default LoginPage
